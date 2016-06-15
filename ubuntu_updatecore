@@ -1,0 +1,3 @@
+#!/bin/bash
+apt-get install linux-generic -qy;apt-get install linux-headers-generic -qy;apt-get install linux-headers-generic-pae -qy;apt-get install linux-image-generic -qy
+ls -rt /boot/vmlinuz-* | head -n -2 | sed 's@vmlinuz-@linux-image-@g' | sed 's@/boot/@@' | xargs -I {} apt-get remove -y {}
