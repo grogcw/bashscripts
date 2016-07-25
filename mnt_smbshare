@@ -1,0 +1,3 @@
+#!/bin/bash
+mkdir /media/SMBSAHRE/
+mount -t cifs -o user=user,password=password,iocharset=utf8,file_mode=0777,dir_mode=0777,vers=2.1 //server_ip/share  /mountpoint
