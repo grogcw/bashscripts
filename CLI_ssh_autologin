@@ -1,5 +1,5 @@
-#1
+### Generate your own key first ###
 ssh-keygen -t rsa
 
-#2
-cat .ssh/id_rsa.pub | ssh user@ssh_server 'cat >> .ssh/authorized_keys'
+### Copy it to the server ###
+cat ~/.ssh/id_rsa.pub | ssh user@ssh_server 'cat >> ~/.ssh/authorized_keys'
