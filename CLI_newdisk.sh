@@ -3,7 +3,7 @@ cd /
 read -e -p 'Mountpoint : ' mount
 if [ -d "$mount" ]; then
 while true; do
-	read -p 'Are you sure about mountpoint = '$mount' ? [Y/N]' yn
+	read -p 'Are you sure about mountpoint = '$mount' ? [Y/N] ' yn
 	case $yn in
 		[Yy]* ) echo "Creating default folders...";
 		mkdir $mount/\@ANIME;
