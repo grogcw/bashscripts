@@ -1,9 +1,16 @@
+--- OLD ---
 login user must be www-data
 
 #!/bin/sh
 echo "Maintenance mode enable..."
 php /var/www/owncloud/console.php maintenance:mode --on
 echo "Scanning files..."
-php /var/www/owncloud/console.php files:scan <user1> <user2> <usern> <or --all>
+/var/www/owncloud/occ files:scan <user1> <user2> <usern> <or --all>
 echo "Maintenance mode disable..."
 php /var/www/owncloud/console.php maintenance:mode --off
+
+
+--- NEW ---
+#!/bin/sh
+echo "Scanning files..."
+su -c "php /var/www/owncloud/occ files:scan --all" www-data
