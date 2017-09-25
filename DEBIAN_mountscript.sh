@@ -1,6 +1,6 @@
 #/bin/bash
 
-#DEFIINES MOUNTFOLDER & IP_POOL
+#DEFINES MOUNTFOLDER & IP_POOL
 MOUNTFOLDER=/mnt
 
 IP_POOL="192.168.0."
@@ -27,7 +27,7 @@ if [[ $IP_ADDRESS =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]; then
         [[ ${ip[0]} -le 255 && ${ip[1]} -le 255 \
             && ${ip[2]} -le 255 && ${ip[3]} -le 255 ]]
         stat=1
- fi
+fi
 
 if [[ $stat = 1 ]]; then
 
