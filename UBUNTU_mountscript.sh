@@ -7,7 +7,7 @@ IP_POOL="192.168.0."
 echo "IP Pool is "$IP_POOL"XXX"
 
 #ASKS IP TERMINATION
-read -p "IP Address (enter or q to quit) : " IP_ADDRESS_TERM
+read -e -p "IP Address (enter or q to quit) : " IP_ADDRESS_TERM
 
 if [ -z "$IP_ADDRESS_TERM" ] || [[ "$IP_ADDRESS_TERM" = "q" ]] || [[ "$IP_ADDRESS_TERM" = "Q" ]];
 	then
@@ -41,7 +41,7 @@ if [ $retval -ne 0 ]; then
 fi
 
 #ASK FOR SHARENAME
-read -p "Sharename (enter or q to quit) : " SHARENAME
+read -e -p "Sharename (enter or q to quit) : " SHARENAME
 if [ -z "$SHARENAME" ] || [[ "$SHARENAME" = "q" ]] || [[ "$SHARENAME" = "Q" ]];
         then
 exit
