@@ -32,7 +32,7 @@ fi
 if [[ $stat = 1 ]]; then
 
 #TRY TO CONNECT
-smbclient -L $IP_ADDRESS -N
+smbclient -L $IP_ADDRESS -N -m SMB2
 
 #CHECK COMMAND SUCCESS
 retval=$?
@@ -59,7 +59,7 @@ PASSWORD=${PASSWORD:-GUEST}
 mkdir /mnt/"$SHARENAME"
 
 #MOUNTS
-mount -t cifs -o user=$USERNAME,password=$PASSWORD,iocharset=utf8,file_mode=0777,dir_mode=0777,vers=2.1 "//"$IP_ADDRESS/"$SHARENAME" $MOUNTFOLDER/"$SHARENAME"
+mount -t cifs -o user=$USERNAME,password=$PASSWORD,iocharset=utf8,file_mode=0777,dir_mode=0777,vers=2.1,sec=ntlm "//"$IP_ADDRESS/"$SHARENAME" $MOUNTFOLDER/"$SHARENAME"
 
 #CHECKS IF SUCCESS
 retval=$?
