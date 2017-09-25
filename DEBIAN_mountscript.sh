@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 #DEFINES MOUNTFOLDER & IP_POOL
 MOUNTFOLDER=/mnt
@@ -32,7 +32,7 @@ fi
 if [[ $stat = 1 ]]; then
 
 #TRY TO CONNECT
-smbclient -L $IP_ADDRESS -N
+smbclient -L $IP_ADDRESS -N -m SMB2
 
 #CHECK COMMAND SUCCESS
 retval=$?
@@ -59,7 +59,7 @@ PASSWORD=${PASSWORD:-GUEST}
 mkdir /mnt/"$SHARENAME"
 
 #MOUNTS
-mount -t cifs //$IP_ADDRESS/"$SHARENAME" -o username=$USERNAME,password=$PASSWORD $MOUNTFOLDER/"$SHARENAME"
+mount -t cifs //$IP_ADDRESS/"$SHARENAME" -o username=$USERNAME,password=$PASSWORD,vers=2.1,sec=ntlm $MOUNTFOLDER/"$SHARENAME"
 
 #CHECKS IF SUCCESS
 retval=$?
