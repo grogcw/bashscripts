@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 #DEFINES MOUNTFOLDER & IP_POOL
 MOUNTFOLDER=/mnt
