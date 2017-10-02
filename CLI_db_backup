@@ -1,0 +1,11 @@
+You need to create .my.cnf to avoid password prompt.
+
+######### CREATE ~/.my.cnf #########
+[mysqldump]
+user = DBUSER
+password = DBPASSWD
+
+
+######## CREATE DB_BACKUP.SH #########
+#!/bin/bash
+mysqldump --single-transaction -h localhost -u USER THEDB > THEDB-dbbackup_`date +"%Y"-"%m"-"%d"`.bak
