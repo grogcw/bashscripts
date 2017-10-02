@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo apt-get update -qy;sudo apt-get upgrade -qy;sudo apt-get autoclean -qy
+sudo apt update -qy;sudo apt upgrade -qy;sudo apt-get autoclean -qy
