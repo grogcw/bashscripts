@@ -6,7 +6,7 @@ NC='\033[0m' # No Color
 ##### Check dependencies #####
 # -> for UnZip
 command -v unzip >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
-        echo -e "${RED}Error : Zip not installed (Whaaaaaat ?!)${NC}"
+        echo -e "${RED}Error : UnZip not installed (Whaaaaaat ?!)${NC}"
         exit
 fi
 # -> for OpenSSL
