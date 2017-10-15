@@ -4,8 +4,8 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 ##### Check dependencies #####
-# -> for Zip
-command -v zip >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
+# -> for UnZip
+command -v unzip >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
         echo -e "${RED}Error : Zip not installed (Whaaaaaat ?!)${NC}"
         exit
 fi
