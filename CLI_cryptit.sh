@@ -1,4 +1,9 @@
 #!/bin/bash
+##### Color definitions #####
+RED='\033[0;31m'
+BLUE='\033[0;36m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
 
 ##### Check dependencies #####
 # -> for Zip
@@ -35,10 +40,6 @@ if [ -z "$1" ];
 fi
 
 ##### Now, some art. #####
-RED='\033[0;31m'
-BLUE='\033[0;36m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
 echo -e "${RED}                             __  ${BLUE} __ ${GREEN}__ "
 echo -e "${RED}  _____ _____ __  __ ____   / /_ ${BLUE}/ /${GREEN}/ /_"
 echo -e "${RED} / ___// ___// / / // __ \ / __/${BLUE}/ /${GREEN}/ __/"
