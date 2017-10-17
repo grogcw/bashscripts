@@ -1,0 +1,29 @@
+To backup the system :
+
+SU / LOGIN ROOT / SUDO
+
+# cd my_backup_dir (preferably, not on sda)
+
+# tar cvpzf backup.tgz --exclude=/proc --exclude=/lost+found --exclude=/backup.tgz --exclude=/mnt --exclude=/media --exclude=/sys /
+
+
+To restore the system :
+
+SU / LOGIN ROOT / SUDO
+
+mkdir $_all_exclude_dirs
+
+# cd my_backup_dir (preferably, not on sda)
+
+# tar xvpfz backup.tgz -C /
+
+
+IF GRUB IS MISSING :
+
+1. Pop in the Live CD, boot from it until you reach the desktop.
+2. Open a terminal window or switch to a tty.
+3. Type "grub"
+4. Type "root (hd0,6)", or whatever your harddisk + boot partition numbers are (my /boot is at /dev/sda7, which translates to hd0,6 for grub).
+5. Type "setup (hd0)", ot whatever your harddisk nr is.
+6. Quit grub by typing "quit".
+7. Reboot.
