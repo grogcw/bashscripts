@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DIR="${PWD}"
+find /$DIR -type f -exec grep -H $1 {} \;
