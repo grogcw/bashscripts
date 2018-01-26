@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install git zsh -qy
+apt install git zsh curl -qy
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 mkdir ~/.oh-my-zsh/custom/themes/
