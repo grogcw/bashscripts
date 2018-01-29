@@ -114,4 +114,4 @@ mv $logfile /root/smart_report_$THEDATE.log
 #sendmail -t < "$logfile"
 #rm "$logfile"
 
-echo 'Wrote /root/smart_report_$THEDATE.log'
+echo "Wrote /root/smart_report_$THEDATE.log"
