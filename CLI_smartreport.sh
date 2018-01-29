@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo "Smart Test Remote Maker Script"
+echo ""
+echo "Be sure to edit your drives in the script"
+
 ### Parameters ###
 logfile="/tmp/smart_report.tmp"
 email="your_email@gmail.com"
