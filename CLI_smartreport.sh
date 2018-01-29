@@ -1,5 +1,7 @@
 #!/bin/sh
 
+### Init ###
+echo ""
 echo "Smart Test Remote Maker Script"
 echo ""
 echo "Be sure to edit your drives in the script"
@@ -8,7 +10,7 @@ echo "Be sure to edit your drives in the script"
 logfile="/tmp/smart_report.tmp"
 email="your_email@gmail.com"
 subject="SMART Status Report "
-drives="sda sdb sdc sdd sde sdf"
+drives="sda" #Drives are space separated when multiple eg: "sda sdb sdc sdd sde sdf"
 tempWarn=40
 tempCrit=45
 sectorsCrit=10
