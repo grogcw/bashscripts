@@ -1,9 +1,10 @@
 #!/bin/sh
+echo ""
 echo "Batch Smart Test Script"
 echo ""
 echo "Be sure to edit your drives in the script"
 
-drives="sda sdb sdc sdd sde sdf"
+drives="sda" #Drives are space separated when multiple eg: "sda sdb sdc sdd sde sdf"
 
 command -v smartctl >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
 	echo -e "Error : Smartmontools not installed."
