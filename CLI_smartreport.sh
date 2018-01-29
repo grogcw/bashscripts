@@ -109,3 +109,5 @@ mv $logfile /root/smart_report_$THEDATE.log
 ### EMAIL
 #sendmail -t < "$logfile"
 #rm "$logfile"
+
+echo 'Wrote /root/smart_report_$THEDATE.log'
