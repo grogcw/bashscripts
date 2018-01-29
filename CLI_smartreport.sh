@@ -6,6 +6,18 @@ echo "Smart Test Remote Maker Script"
 echo ""
 echo "Be sure to edit your drives in the script"
 
+### Checking dependencies ###
+command -v smartctl >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
+	echo -e "Error : Smartmontools not installed."
+	exit
+fi
+
+### Optionnal Sendmail (uncomment if needed) ###
+#command -v sendmail >/dev/null 2>&1 || if [[ $? -ne 0 ]] ; then
+#	echo -e "Error : Sendmail not installed."
+#	exit
+#fi
+
 ### Parameters ###
 logfile="/tmp/smart_report.tmp"
 email="your_email@gmail.com"
