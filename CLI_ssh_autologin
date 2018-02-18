@@ -3,3 +3,6 @@ ssh-keygen -t rsa
 
 ### Copy it to the server ###
 cat ~/.ssh/id_rsa.pub | ssh user@ssh_server 'cat >> ~/.ssh/authorized_keys'
+
+### Add your key to the ssh-agent ###
+ssh-add
