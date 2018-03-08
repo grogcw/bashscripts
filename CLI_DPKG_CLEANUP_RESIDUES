@@ -1,0 +1,2 @@
+#!/bin/bash
+dpkg --get-selections | grep deinstall | sed 's/deinstall/\lpurge/' | dpkg --set-selections; dpkg -Pa
