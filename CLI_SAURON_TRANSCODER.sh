@@ -56,7 +56,7 @@ mkdir $targetdir$subdir
 
 ### TRANSCODE FILE AND OUTPUT IN TARGETDIR'S SUBFOLDER ###
 echo "Starting transcoding $file"
-ffmpeg-normalize "$sourcedir$subdir$file" -c:a libmp3lame -b:a 128k -nt ebu -t -12 -vn -sn -f -v -o "$targetdir$subdir$file"
+ffmpeg-normalize "$sourcedir$subdir$file" -c:a libmp3lame -b:a 128k -nt ebu -t -16 -vn -sn -f -v -o "$targetdir$subdir$file"
 echo "Finished transcoding $file"
 
 ### DELETE SUBDIR AND FILE FROM SOURCEDIR ###
