@@ -4,6 +4,7 @@
 ### SETUP VARIABLES ###
 sourcedir=/TRANSCODE_WATCH ### /!\ NO END SLASH IN PATH
 targetdir=/MUSIC_DATA ### /!\ NO END SLASH IN PATH
+DATE=$(date +%H:%M:%S" the "%d-%m-%Y)
 
 ##### COLOR DEFINITIONS #####
 RED='\033[0;31m'
@@ -55,8 +56,8 @@ subdir=${path//$sourcedir/}
 mkdir $targetdir$subdir
 
 ### TRANSCODE FILE AND OUTPUT IN TARGETDIR'S SUBFOLDER ###
-echo "Starting transcoding $file"
-ffmpeg-normalize "$sourcedir$subdir$file" -c:a libmp3lame -b:a 128k -nt ebu -t -16 -vn -sn -f -v -o "$targetdir$subdir$file"
+echo "Starting transcoding $file at $DATE"
+ffmpeg-normalize "$sourcedir$subdir$file" -c:a libmp3lame -b:a 192k -nt ebu -t -16 -vn -sn -f -v -o "$targetdir$subdir$file"
 echo "Finished transcoding $file"
 
 ### DELETE SUBDIR AND FILE FROM SOURCEDIR ###
