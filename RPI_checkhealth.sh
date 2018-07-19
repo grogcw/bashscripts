@@ -1,5 +1,8 @@
 #!/bin/bash
 echo -e "" ; \
+echo -e " \033[1;33m--- CPU Temperature ---\033[0m" ; \
+echo -e " core : $(vcgencmd measure_temp)" ; \
+echo -e "" ; \
 #echo -e "\033[1;33m########## VOLTAGES ##########\033[0m" ; \
 #echo -e "" ; \
 echo -e " \033[1;31m--- CPU Voltage ---\033[0m" ; \
