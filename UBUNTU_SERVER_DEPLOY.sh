@@ -86,7 +86,7 @@ locale-gen fr_FR.UTF-8
 dpkg-reconfigure locales
 
 ### INSTALL CERTBOT ###
-apt install software-properties-common
+apt install software-properties-common -qy
 add-apt-repository ppa:certbot/certbot
 apt update
 
