@@ -1,9 +1,13 @@
 #!/bin/bash
 
-### REMOVE CLOUD-INIT ###
-#echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
-#apt purge cloud-init
-#rm -rf /etc/cloud/; sudo rm -rf /var/lib/cloud/
+### EXECUTE THIS SCRIPT AS ROOT ###
+### EXECUTE THIS SCRIPT AS ROOT ###
+### EXECUTE THIS SCRIPT AS ROOT ###
+
+### IF YOU WANT TO REMOVE CLOUD-INIT COPY PASTE THIS WITHOT THE # AT THE BEGGINING ###
+# echo 'datasource_list: [ None ]' | sudo -s tee /etc/cloud/cloud.cfg.d/90_dpkg.cfg
+# apt purge cloud-init
+# rm -rf /etc/cloud/; sudo rm -rf /var/lib/cloud/
 
 ### PUSH DEFAULT REPOSITORIES ###
 
