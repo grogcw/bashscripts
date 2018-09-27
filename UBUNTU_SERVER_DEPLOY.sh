@@ -96,7 +96,7 @@ apt install build-essential git autotools-dev autoconf libtool gettext gawk gper
   icecast2 liquidsoap gcc make autoconf libc-dev pkg-config libmcrypt-dev \
   wget unzip php7.2-mysql libapache2-mod-php7.2 php7.2-mbstring php7.2-curl \
   perl libnet-ssleay-perl openssl libauthen-pam-perl libpam-runtime libio-pty-perl \
-  apt-transport-https apt-show-versions python webmin parted \
+  apt-transport-https apt-show-versions python webmin parted rename locate \
   php7.2-zip php7.2-gd htop mc screen unzip git zsh samba samba-client ntfs-3g -qy
 
 ### INSTALL PHP 7.2 MCRYPT ###
