@@ -80,11 +80,15 @@ apt update
 ### UPGRADE EXISTING PACKAGES ###
 apt upgrade
 
-### REOCNFIGURE LOCALES ###
+### RECONFIGURE LOCALES ###
 apt install language-pack-fr -qy
 locale-gen fr_FR.UTF-8
 dpkg-reconfigure locales
 
+### INSTALL CERTBOT ###
+apt install software-properties-common
+add-apt-repository ppa:certbot/certbot
+apt update
 
 ### INSTALL SERVERS & DEFAULT PACKAGES ###
 apt install build-essential git autotools-dev autoconf libtool gettext gawk gperf \
