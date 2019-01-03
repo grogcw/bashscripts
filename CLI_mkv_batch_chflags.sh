@@ -64,19 +64,38 @@ echo $file
 #  for track 2 & 4, and sets unable & default for track 3
 #
 #  You can add or delete lines below according to mkvpropedit syntax
+#
+#  Echos are only here for keeping track of progress and eye candy.
 
+echo ""
+echo -e "Pass 1"
+echo ""
+echo -e "Disabling track 2 force flag."
 mkvpropedit "${file}" --edit track:2 --set flag-forced=0
+echo -e "Disabling track 2 enabled flag."
 mkvpropedit "${file}" --edit track:2 --set flag-enabled=0
+echo -e "Disabling track 2 default flag."
 mkvpropedit "${file}" --edit track:2 --set flag-default=0
 
+echo ""
+echo -e "Pass 2"
+echo ""
+echo -e "Disabling track 4 default flag."
 mkvpropedit "${file}" --edit track:4 --set flag-default=0
+echo -e "Disabling track 4 enabled flag."
 mkvpropedit "${file}" --edit track:4 --set flag-enabled=0
+echo -e "Disabling track 4 forced flag."
 mkvpropedit "${file}" --edit track:4 --set flag-forced=0
 
+echo ""
+echo -e "Pass 3"
+echo ""
+echo -e "Disabling track 3 forced flag."
 mkvpropedit "${file}" --edit track:3 --set flag-forced=0
+echo -e "Enabling track 3 enabled flag."
 mkvpropedit "${file}" --edit track:3 --set flag-enabled=1
+echo -e "Enabling track 3 default flag."
 mkvpropedit "${file}" --edit track:3 --set flag-default=1
-
 ### END OF SETTINGS ###
 
 done
