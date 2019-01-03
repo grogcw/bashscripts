@@ -29,7 +29,7 @@ fi
 
 ### CHECK FOLDER ###
 if [ ! -d $1 ]; then
-        echo -e "${RED}Error${NC} : folder $1 incorrect or missing. (Wrong path ?)"
+        echo -e "${RED}Error${NC} : folder $1 incorrect or missing. (Wrong path, or missing ending \"/\" ?)"
         exit
 fi
 
