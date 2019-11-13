@@ -4,12 +4,13 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-OUTPUT=/folder/icecast.pem
+DOMAIN=mydomain.com
+OUTPUT=icecast.pem
 
-echo -e "${YELLOW}Getting Cert and PrivKey from certbot${NC}"
+echo -e "${YELLOW}Getting Cert and PrivKey from ${DOMAIN}${NC}"
 echo ""
 
-CERT=/etc/letsencrypt/live/<domain>/cert.pem
+CERT=/etc/letsencrypt/live/$DOMAIN/cert.pem
 if test -f "$CERT";
 then
 	echo -e "${GREEN}$CERT exist !${NC}"
@@ -19,7 +20,7 @@ else
 	exit
 fi
 
-PRIVKEY=/etc/letsencrypt/live/<domain>/privkey.pem
+PRIVKEY=/etc/letsencrypt/live/$DOMAIN/privkey.pem
 if test -f "$PRIVKEY";
 then
 	echo -e "${GREEN}$PRIVKEY exist !${NC}"
