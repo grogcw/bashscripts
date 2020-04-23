@@ -34,14 +34,27 @@ if [ -z "$targeturl" ] || [[ "$targeturl" = "q" ]] || [[ "$targeturl" = "Q" ]];
 	then
 exit
 	else
-
 echo ""
 wget $targeturl -O $owncloud_dir/owncloud-latest.zip
+	if [ $? -ne 0 ]; then
+		echo ""
+		echo "Error while fetching file."
+		exit 1
+	fi
+fi
+
+read -p "Proceed update ? [Y/N]" -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Nn]$ ]]
+then
+	exit 1
 fi
 
 mv $owncloud_dir/owncloud $owncloud_dir/owncloud-bck
 
 unzip $owncloud_dir/owncloud-latest.zip -d $owncloud_dir
+
+rm $owncloud_dir/owncloud-latest.zip
 
 cp $owncloud_dir/owncloud-bck/config/config.php $owncloud_dir/owncloud/config/config.php
 cp -r $owncloud_dir/owncloud-bck/data $owncloud_dir/owncloud/data
@@ -52,6 +65,10 @@ read -p "Is Owncloud successfully updated ? (I can wait...) [Y/N]" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-	rm $owncloud_dir/owncloud-latest.zip
 	rm -rf $owncloud_dir/owncloud-bck/
+else
+	echo "Reverting to previous version."
+	mv $owncloud_dir/owncloud/ $owncloud_dir/owncloud-update_pending/
+	mv $owncloud_dir/owncloud-bck/ $owncloud_dir/owncloud/
+	echo "Files are kept in $owncloud_dir/owncloud-update_pending/"
 fi
