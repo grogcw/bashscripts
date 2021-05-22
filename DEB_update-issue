@@ -1,0 +1,10 @@
+#
+#               This will display ip address on TTY at login screen
+#
+#               Create "update-issue" file in /etc/network/ip-up.d/
+#
+
+#!/bin/sh
+PREFIX=$(uname -srvn)
+IPADDRS=$(hostname -I | tr " " "\n" | grep -v "^$" | sort -t . -k 1,1n | head -1 | tr "\n" " ")
+echo "$PREFIX\n\nIP: $IPADDRS\n" > /etc/issue
