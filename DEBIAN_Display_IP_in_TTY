@@ -1,0 +1,8 @@
+nano /etc/network/if-up.d/update-issue
+
+#!/bin/sh
+PREFIX=$(uname -srvn)
+IPADDRS=$(hostname -I | tr " " "\n" | grep -v "^$" | sort -t . -k 1,1n | head -1 | tr "\n" " ")
+echo "$PREFIX\n\nIP: $IPADDRS\n" > /etc/issue
+
+chmod +x /etc/network/if-up.d/update-issue
